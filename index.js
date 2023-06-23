@@ -2,7 +2,7 @@ let data = {}
 const p = document.getElementById('display-grade');
 
 
-Papa.parse("./DS-grades-S23-grad.csv", {
+Papa.parse("./DS-grades-S23-EECS.csv", {
 	download: true,
     encoding: "utf-8",
     complete: function(results) {
@@ -24,7 +24,7 @@ Papa.parse("./DS-grades-S23-grad.csv", {
 })
 
 function display() {
-    const id = document.getElementById('sid-H1').value;
+    const id = document.getElementById('sid-mid').value;
     if (id=="") return;
     // p.innerText = JSON.stringify(data[id]);
     const display = `
@@ -34,10 +34,13 @@ function display() {
     H3: ${data[id].H3}
     H4: ${data[id].H4}
     H5: ${data[id].H5}
-    Havg: ${data[id].Havg}
+    Mid: ${data[id].Mid}
+    Fin: ${data[id].Fin}
+    CPE: ${data[id].CPE}
+    ATT: ${data[id].ATT}
+    Sem: ${data[id].Sem}
+    The grade is determined by the following rule: (H1+H2+H3+H4+H5+H6)/6*0.4+Mid*0.25+FIN*0.35+CPE.
+    Note that the highest grade of this course is 99. If your final grade is large than 99, then you will get 99 at most.
     `;
     p.innerText = display;
 }
-// Sem: ${data[id].Sem}
-// The grade is determined by the following rule: (H1+H2+H3+H4)/4*0.4+SQRT(Mid+20)*10*0.25+SQRT(FIN+20)*10*0.35.
-//     Note that the highest grade of this course is 99. If your final grade is large than 99, then you will get 99 at most.
