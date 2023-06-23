@@ -32,12 +32,12 @@ function display() {
     SID:${data[id].學號}
     
     各項作業分數：
-    H1: ${data[id].H1}
-    H2: ${data[id].H2}
-    H3: ${data[id].H3}
-    H4: ${data[id].H4}
-    H5: ${data[id].H5}
-    H6: ${data[id].H6}
+    H1: ${data[id].HW1}
+    H2: ${data[id].HW2}
+    H3: ${data[id].HW3}
+    H4: ${data[id].HW4}
+    H5: ${data[id].HW5}
+    H6: ${data[id].HW6}
 
     考試分數：
     Mid:${data[id].Mid}
