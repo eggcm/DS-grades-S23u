@@ -5,7 +5,7 @@ const p = document.getElementById('display-grade');
   Papa.parse("DS-grades-S23-EECS.csv", {
 // Papa.parse("test.csv", {
     download: true,
-    encoding: "utf-8",
+    encoding: "UTF-8",
     complete: function(results) {
         let header = results.data.slice(0, 1)[0];
         let res = results.data.slice(1);
